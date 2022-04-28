@@ -44,6 +44,24 @@ namespace FindMaxProblem
                 return third;
             }
         }
+        public string FindMaxString(string first, string second, string third)
+        {
+            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
+            {
+                Console.WriteLine("first is greater" + first);
+                return first;
+            }
+            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
+            {
+                Console.WriteLine("first is greater" + first);
+                return second;
+            }
+            else
+            {
+                Console.WriteLine("Third is greater");
+                return third;
+            }
+        }
     }
 }
 

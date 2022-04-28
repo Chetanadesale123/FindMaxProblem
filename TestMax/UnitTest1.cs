@@ -6,21 +6,21 @@ namespace TestMax
     public class Tests
     {
         [Test]
-        public void GivenMaxNumInPositionOne_WhenTestMax_ShouldRAETURNMaxNum()
+        public void GivenIntMaxNumInPositionOne_WhenTestMax_ShouldRAETURNMaxNum()
         {
             FindMax max = new FindMax();
             int actual = max.FindMaxInteger(3, 2, 1);
             Assert.AreEqual(actual, 3);
         }
         [Test]
-        public void GivenMaxNumInPositionTwo_WhenTestMax_ShouldRAETURNMaxNum()
+        public void GivenIntMaxNumInPositionTwo_WhenTestMax_ShouldRAETURNMaxNum()
         {
             FindMax max = new FindMax();
             int actual = max.FindMaxInteger(2, 3, 1);
             Assert.AreEqual(actual, 3);
         }
         [Test]
-        public void GivenMaxNumInPositionThree_WhenTestMax_ShouldRAETURNMaxNum()
+        public void GivenIntMaxNumInPositionThree_WhenTestMax_ShouldRAETURNMaxNum()
         {
             FindMax max = new FindMax();
             int actual = max.FindMaxInteger(1, 2, 3);
@@ -47,6 +47,26 @@ namespace TestMax
             float actual = max.FindMaxFloat(3.3f,18.5f,77.9f);
             Assert.AreEqual(actual, 77.9f);
         }
-
+        [Test]
+        public void GivenStringMaxNumInPositionOne_WhenTestMax_ShouldRAETURNMaxNum()
+        {
+            FindMax max = new FindMax();
+            string actual = max.FindMaxString("python","cpp","java");
+            Assert.AreEqual(actual,"python");
+        }
+        [Test]
+        public void GivenStringMaxNumInPositionTwo_WhenTestMax_ShouldRAETURNMaxNum()
+        {
+            FindMax max = new FindMax();
+            string actual = max.FindMaxString("cpp","python","java");
+            Assert.AreEqual(actual,"python");
+        }
+        [Test]
+        public void GivenStringMaxNumInPositionThree_WhenTestMax_ShouldRAETURNMaxNum()
+        {
+            FindMax max = new FindMax();
+            string actual = max.FindMaxString("java","cpp","python");
+            Assert.AreEqual(actual, "python");
+        }
     }
 }
