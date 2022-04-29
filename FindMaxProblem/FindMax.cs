@@ -8,31 +8,30 @@ namespace FindMaxProblem
 {
     public class FindMax<T> where T : IComparable
     {
-        public T first, second, third;
-        public FindMax(T first, T second, T third)
+        public T[] value;
+        public FindMax(T[] value)
         {
-            this.first = first;
-            this.second = second;
-            this.third = third;
+            this.value = value;
+
         }
-        public T FindMaximum()
+        public T[] Sort(T[] values)
         {
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
-            {
-                Console.WriteLine("first is greater" + first);
-                return first;
-            }
-            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
-            {
-                Console.WriteLine("first is greater" + first);
-                return second;
-            }
-            else
-            {
-                Console.WriteLine("Third is greater");
-                return third;
-            }
+            Array.Sort(values);
+            return values;
         }
+        public T MaxValue(params T[] values)
+        {
+            var SortedValues = Sort(values);
+            return SortedValues[^1];
+
+        }
+        public T PrintMaxValue()
+        {
+            var max = MaxValue(this.value);
+            return max;
+
+        }
+
 
     }
 }
